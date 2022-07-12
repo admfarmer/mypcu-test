@@ -1,0 +1,54 @@
+<p-toast position="bottom-right"></p-toast>
+<!-- ------------------------------------------ -->
+    <ag-grid-angular #agGrid3 style="width: 100%; height: 500px;font-size: 23px;" class="ag-theme-alpine"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        [rowSelection]="rowSelection"
+        [debug]="true"
+        [pagination]="true"
+        (selectionChanged)="onSelectionChanged($event)"
+        (cellValueChanged)="onCellValueChanged($event)"
+        (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+    <!-- --------------------------------------- -->
+    <p-dialog header="แก้ไขข้อมูล Setup" [(visible)]="display">
+        <p-card header="">
+            <ng-template pTemplate="header">
+                
+            </ng-template>
+            <div class="grid p-fluid">
+                <div class="col-12 md:col-6">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" pInputText placeholder="nameset" name="nameset" [(ngModel)]="nameset">         
+                    </div>
+                </div>
+                <div class="col-12 md:col-6">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" pInputText placeholder="hi_hsp_nm" name="hi_hsp_nm" [(ngModel)]="hi_hsp_nm">         
+                    </div>
+                </div>
+                <div class="col-12 md:col-6">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" pInputText placeholder="hi_chw_cd" name="hi_chw_cd" [(ngModel)]="hi_chw_cd">         
+                    </div>
+                </div>
+                <div class="col-12 md:col-6">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" pInputText placeholder="hi_chw_nm" name="hi_chw_nm" [(ngModel)]="hi_chw_nm">         
+                    </div>
+                </div>
+                
+
+            </div>
+            <ng-template pTemplate="footer">
+                <button type="button" pButton label="Save"  (click)="onSave()" ></button>
+                <button type="button" pButton label="Cancel"  (click)="display = false" ></button>
+
+            </ng-template>
+        </p-card>        
+    </p-dialog>

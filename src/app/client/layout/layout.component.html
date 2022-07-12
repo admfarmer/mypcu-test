@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-container yellow-container overflow-hidden">
+        <div class="flex-1">
+            <p-menubar [model]="items1">
+                <div>
+                    <!-- <input type="text" pInputText placeholder="Search" style="margin-left:.25em"> -->
+                    <button type="button" pButton label="Logout" icon="pi pi-power-off" (click)="logout()"
+                        style="margin-left:.25em"></button>
+                </div>
+            </p-menubar>        </div>
+        <div class="flex-1">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
